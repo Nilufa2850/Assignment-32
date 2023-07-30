@@ -6,40 +6,48 @@ using namespace std ;
 class RECTANGLE
 {
     private : 
-        int x , y ;
-        float p , q ;
+        float area ;
 
     public :
 
-        void set_int_Data(int m , int n)
+        void showArea ()
         {
-            x = m ;
-            y = n ;
+            cout<<"Area is "<<area<<endl ;
         }
-        void set_float_Data(float m , float n)
+        
+        void Area (int m , int n)
         {
-            p = m ;
-            q = n ;
+            area = m*n  ;
         }
-        int Area_int ()
+        void Area (int m , double n)
         {
-            return x*y ;
+            area = m*n  ;
         }
-        float Area_float ()
+        void Area (double m , int n)
         {
-            return p*q ;
-        } 
+            area = m*n  ;
+        }
+        void Area (double m , double n)
+        {
+            area = m*n  ;
+        }
 };
         
 int main ()
 {
-    RECTANGLE r1 , r2 ;
+    RECTANGLE r1 ;
 
-    r1.set_int_Data(4,5) ;
-    r2.set_float_Data(6.3,8.7) ;
+    r1.Area(4,5) ;
+    r1.showArea() ;
 
-    cout<<"Area of r1 = "<<r1.Area_int() <<endl ;
-    cout<<"Area of r2 = "<<r2.Area_float()<<endl ;
+    r1.Area(6,4.3) ;
+    r1.showArea() ;
+
+    r1.Area(5.2,8) ;
+    r1.showArea() ;
+
+    r1.Area(9.7,2.3) ;
+    r1.showArea() ;
 
     return 0 ;
 }
