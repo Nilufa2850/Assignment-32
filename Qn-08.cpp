@@ -12,12 +12,16 @@ class Factorial
     public : 
         Factorial ( int n)
         {
-            cout<<"Copy constructor called"<<endl ;
             num = n ;
+            fact = 1 ;
+        }
+        Factorial (Factorial &f)    // copy constructor
+        {
+            num = f.num ;
+            fact = 1 ;
         }
         int cal_fact()
         {
-            fact = 1 ;
             int i ;
             for(i=num ; i>0 ; i--)
                 fact = fact * i ;
@@ -33,10 +37,16 @@ class Factorial
 
 int main ()
 {
-    Factorial f1=5 ;
+    int x ;
+    cout<<"Enter a number : ";
+    cin>>x ;
 
+    Factorial f1(x) ;
     f1.show_result() ;
-    
+
+    Factorial f2 = f1 ;
+    f2.show_result() ;
+
     return 0 ;
 
 }
